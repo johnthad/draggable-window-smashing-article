@@ -1,0 +1,17 @@
+{
+  "name": "smashing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dragController.js",
+  "scripts": {
+    "start": "wds --node-resolve --open --watch"
+  },
+  "keywords": [],
+  "author": "Andrico Karoulla",
+  "license": "ISC",
+  "devDependencies": {
+    "@web/dev-server": "0.1.32",
+    "lit": "2.2.8",
+    "pointer-tracker": "2.5.3"
+  }
+}

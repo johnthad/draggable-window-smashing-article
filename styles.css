@@ -1,0 +1,28 @@
+:root {
+  --font-primary: Verdana;
+  --color-blue-300: hsl(212deg, 50%, 40%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--color-blue-300);
+}
