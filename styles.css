@@ -1,6 +1,32 @@
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("./fonts/ms-sans-serif/ms-sans-serif.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("./fonts/ms-sans-serif-bold/ms-sans-serif-bold.otf")
+    format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
 :root {
-  --font-primary: Verdana;
+  --font-primary: "Pixelated MS Sans Serif", Verdana;
+
+  --color-black: hsl(0deg, 0%, 0%);
+
+  --color-blue-100: hsl(212deg, 50%, 27%);
   --color-blue-300: hsl(212deg, 50%, 40%);
+  --color-blue-700: hsl(212deg, 100%, 64%);
+  --color-blue-900: hsl(212deg, 50%, 79%);
+
+  --color-gray-400: hsl(0deg, 0%, 64%);
+  --color-gray-500: hsl(0deg, 0%, 73%);
+
+  --border-width: 2px;
 }
 
 *,

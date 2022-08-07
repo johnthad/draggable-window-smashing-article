@@ -4,7 +4,7 @@ import { DragController } from "./dragController";
 
 export class A2kWindow extends LitElement {
   render() {
-    return html``;
+    return html`<slot></slot>`;
   }
 }
 
