@@ -52,4 +52,5 @@ body {
 
 body {
   background: var(--color-blue-300);
+  overflow: hidden;
 }
