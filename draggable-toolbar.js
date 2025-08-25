@@ -64,18 +64,18 @@ class DraggableToolbar extends LitElement {
       type: String,
     },
     top: {
-      type: String,
+      type: Number,
     },
     left: {
-      type: String,
+      type: Number,
     },
   };
 
   constructor() {
     super();
     this.title = '';
-    this.top = '0px';
-    this.left = '0px';
+    this.top = 0;
+    this.left = 0;
   }
 
   drag = new DragController(this, {

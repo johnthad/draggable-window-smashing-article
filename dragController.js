@@ -30,8 +30,8 @@ export class DragController {
   }
 
   set initialPosition(position) {
-    this.styles.top = position.top;
-    this.styles.left = position.left;
+    this.styles.top = position.top + 'px';
+    this.styles.left = position.left + 'px';
   }
 
   init() {
