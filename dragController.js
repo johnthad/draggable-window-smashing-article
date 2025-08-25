@@ -113,8 +113,7 @@ export class DragController {
         this.x = 0;
       } else if (outOfBoundsBottom) {
         this.y =
-          window.innerHeight -
-          height -
+          Math.floor(window.innerHeight - height) -
           parseInt(this.styles.top) -
           containerEl.getBoundingClientRect().height;
       } else if (outOfBoundsRight) {
