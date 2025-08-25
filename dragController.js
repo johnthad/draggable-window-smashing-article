@@ -76,11 +76,7 @@ export class DragController {
     const oldX = this.x;
     const oldY = this.y;
 
-    //JavaScript’s floats can be weird, so we’re flooring these to integers.
-    const parsedTop = Math.floor(pointer.pageX);
-    const parsedLeft = Math.floor(pointer.pageY);
-
-    //JavaScript’s floats can be weird, so we’re flooring these to integers.
+    // JavaScript’s floats can be weird, so we’re flooring these to integers.
     const cursorPositionX = Math.floor(pointer.pageX);
     const cursorPositionY = Math.floor(pointer.pageY);
 
@@ -106,12 +102,6 @@ export class DragController {
       const outOfBoundsBottom = bottom + yDelta > window.innerHeight;
       const outOfBoundsRight = right + xDelta >= window.innerWidth;
 
-      const isOutOfBounds =
-        outOfBoundsBottom ||
-        outOfBoundsLeft ||
-        outOfBoundsRight ||
-        outOfBoundsTop;
-
       // Set the cursor positions for the next time this function is invoked.
       this.cursorPositionX = cursorPositionX;
       this.cursorPositionY = cursorPositionY;
@@ -122,9 +112,14 @@ export class DragController {
       } else if (outOfBoundsLeft) {
         this.x = 0;
       } else if (outOfBoundsBottom) {
-        this.y = window.innerHeight - height;
+        this.y =
+          window.innerHeight -
+          height -
+          parseInt(this.styles.top) -
+          containerEl.getBoundingClientRect().height;
       } else if (outOfBoundsRight) {
-        this.x = Math.floor(window.innerWidth - width);
+        this.x =
+          Math.floor(window.innerWidth - width) - parseInt(this.styles.left);
       }
 
       this.updateElPosition();
