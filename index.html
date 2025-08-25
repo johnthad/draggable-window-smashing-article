@@ -4,17 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="https://github.com/andrico1234/draggable-window-smashing-article"
+    />
     <title>Document</title>
-    <link href="styles.css" rel="stylesheet" />
+    <!-- <link href="styles.css" rel="stylesheet" /> -->
   </head>
   <body>
-    <a2k-window
+    <!-- <a2k-window heading="Win2K"
       ><p>Welcome to this Smashing tutorial.</p>
       <p>
         You'll be able to drag me arond like an old-school Microsoft window in
         no time!
       </p>
-    </a2k-window>
+    </a2k-window> -->
+
+    <h1>Draggable Toolbar Example</h1>
+    <p>Scroll down to see the toolbar stays in its dragged position.</p>
+
+    <draggable-toolbar heading="Tools">
+      <button>Tool A</button>
+      <button>Tool B</button>
+      <button>Tool C</button>
+    </draggable-toolbar>
 
     <script type="module" src="script.js"></script>
   </body>
