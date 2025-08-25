@@ -29,6 +29,11 @@ export class DragController {
     });
   }
 
+  set initialPosition(position) {
+    this.styles.top = position.top;
+    this.styles.left = position.left;
+  }
+
   init() {
     this.pointerTracker = new PointerTracker(this.draggableEl, {
       start: (...args) => {

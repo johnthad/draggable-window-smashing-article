@@ -12,7 +12,6 @@ class DraggableToolbar extends LitElement {
     }
 
     #toolbar-container {
-      position: absolute; /* Allows for dragging anywhere on the page */
       display: flex;
       flex-direction: column;
       background-color: var(--toolbar-bg);
@@ -21,8 +20,6 @@ class DraggableToolbar extends LitElement {
       color: var(--toolbar-color);
       z-index: 1000;
       user-select: none; /* Prevents text selection during drag */
-      top: 50px; /* Initial position */
-      left: 50px;
     }
 
     #toolbar-content {
@@ -63,12 +60,22 @@ class DraggableToolbar extends LitElement {
   `;
 
   static properties = {
-    heading: {},
+    title: {
+      type: String,
+    },
+    top: {
+      type: String,
+    },
+    left: {
+      type: String,
+    },
   };
 
   constructor() {
     super();
-    this.heading = '';
+    this.title = '';
+    this.top = '0px';
+    this.left = '0px';
   }
 
   drag = new DragController(this, {
@@ -82,10 +89,14 @@ class DraggableToolbar extends LitElement {
   }
 
   render() {
+    this.drag.initialPosition = {
+      top: this.top,
+      left: this.left,
+    };
     return html`
       <div id="toolbar-container" style=${styleMap(this.drag.styles)}>
         <div id="drag-handle" data-dragging=${this.drag.state}>
-          <p>${this.heading}</p>
+          <p>${this.title}</p>
         </div>
         <div id="toolbar-content">
           <slot></slot>
